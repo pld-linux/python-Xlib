@@ -6,7 +6,7 @@ Summary:	X client library for Python
 Summary(pl):	Biblioteka klienta X dla Pythona
 Name:		python-%{module}
 Version:	0.12
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages/Python
 Source0:	http://dl.sourceforge.net/python-xlib/python-xlib-%{version}.tar.gz
@@ -73,7 +73,7 @@ install examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 python setup.py install \
         --root=$RPM_BUILD_ROOT --optimize=2
 
-find $RPM_BUILD_ROOT%{py_sitedir}/%{module}/ -name \*.py | xargs rm
+find $RPM_BUILD_ROOT%{py_sitescriptdir}/%{module}/ -name \*.py | xargs rm
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -81,5 +81,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc NEWS README TODO
-%{py_sitedir}/%{module}
+%{py_sitescriptdir}/%{module}
 %{_examplesdir}/%{name}-%{version}
