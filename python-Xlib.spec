@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.python
 
-%define         module Xlib
+%define         module	Xlib
 
 Summary:	X client library for Python
 Summary(pl):	Biblioteka klienta X dla Pythona
