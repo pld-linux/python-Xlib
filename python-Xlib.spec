@@ -1,5 +1,5 @@
 
-%define         module	Xlib
+%define		module	Xlib
 
 Summary:	X client library for Python
 Summary(pl):	Biblioteka klienta X dla Pythona
@@ -70,7 +70,7 @@ install -d $RPM_BUILD_ROOT%{py_sitedir}
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 install examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 python setup.py install \
-        --root=$RPM_BUILD_ROOT --optimize=2
+	--root=$RPM_BUILD_ROOT --optimize=2
 
 find $RPM_BUILD_ROOT%{py_sitescriptdir}/%{module}/ -name \*.py | xargs rm
 
