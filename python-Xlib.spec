@@ -9,7 +9,7 @@ Version:	0.12
 Release:	1
 License:	GPL
 Group:		Development/Languages/Python
-Source0:	http://dl.sourceforge.net/%{name}/python-xlib-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/python-xlib/python-xlib-%{version}.tar.gz
 # Source0-md5:	83b294f34876c06b1a7697227249cb83
 URL:		http://python-xlib.sourceforge.net/
 %pyrequires_eq	python-modules
