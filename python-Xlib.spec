@@ -13,7 +13,6 @@ Source0:	http://dl.sourceforge.net/python-xlib/python-xlib-%{version}.tar.gz
 URL:		http://python-xlib.sourceforge.net/
 BuildRequires:	python
 BuildRequires:	python-devel >= 1:2.3
-BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
