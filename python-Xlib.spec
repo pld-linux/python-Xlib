@@ -12,9 +12,10 @@ Group:		Development/Languages/Python
 Source0:	http://dl.sourceforge.net/python-xlib/python-xlib-%{version}.tar.gz
 # Source0-md5:	83b294f34876c06b1a7697227249cb83
 URL:		http://python-xlib.sourceforge.net/
-%pyrequires_eq	python-modules
 BuildRequires:	python-devel >= 2.3
 BuildRequires:	rpm-pythonprov
+%pyrequires_eq	python-modules
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -37,12 +38,31 @@ library:
   which have Python installed. A C interface could be problematic to
   port to non-Unix systems, such as MS Windows or OpenVMS.
 
+%description -l pl
+Python X Library (biblioteka X dla Pythona) ma byæ w pe³ni
+funkcjonaln± bibliotek± klienck± X dla programów w Pythonie. Jest
+napisana ca³kowicie w Pythonie, w przeciwieñstwie do poprzednich
+bibliotek X dla Pythona (starego rozszerzenia X i nowszej plxlib),
+które by³y interfejsami do Xlib w C.
+
+Jest to mo¿liwe do zrobienia poniewa¿ programy klienckie X komunikuj±
+siê z X serwerem za pomoc± protoko³u X. Komunikacja odbywa siê poprzez
+TCP/IP, gniazda uniksowe, DECnet lub dowolny inny strumieniowy
+protokó³ sieciowy. Biblioteka Xlib w C jest jedynie interfejsem do
+tego protoko³u, dostarczaj±c funkcje odpowiednie dla ¶rodowiska C.
+
+S± trzy zalety wyboru implementacji jako czysto pythonowej biblioteki:
+- integracja: biblioteka mo¿e u¿ywaæ cudownego systemu obiektowego
+  Pythona, dostarczaj±c ³atw± w u¿yciu hierarchiê klas
+- przeno¶no¶æ: biblioteka bêdzie u¿yteczna na (prawie) ka¿dym
+  komputerze z zainstalowanym Pythonem. Interfejs w C móg³by byæ
+  problematyczny do sportowania na systemy nieuniksowe, jak na
+  przyk³ad MS Windows czy OpenVMS.
+
 %prep
 %setup -q -n python-xlib-%{version}
 
 %build
-CFLAGS="%{rpmcflags}"
-export CLFAGS
 python setup.py build
 
 %install
@@ -61,6 +81,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc NEWS README TODO
-%{py_sitedir}/%{module}/*
-%dir %{_examplesdir}/%{name}-%{version}
-%{_examplesdir}/%{name}-%{version}/*
+%{py_sitedir}/%{module}
+%{_examplesdir}/%{name}-%{version}
