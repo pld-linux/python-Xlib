@@ -11,7 +11,7 @@ Group:		Development/Languages/Python
 Source0:	http://dl.sourceforge.net/python-xlib/python-xlib-%{version}.tar.gz
 # Source0-md5:	4edc71320669e99ad874094bff44f4f8
 URL:		http://python-xlib.sourceforge.net/
-BuildRequires:	python-devel >= 2.3
+BuildRequires:	python-devel >= 1:2.3
 BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
 BuildArch:	noarch
