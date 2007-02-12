@@ -2,7 +2,7 @@
 %define		module	Xlib
 
 Summary:	X client library for Python
-Summary(pl):	Biblioteka klienta X dla Pythona
+Summary(pl.UTF-8):   Biblioteka klienta X dla Pythona
 Name:		python-%{module}
 Version:	0.12a
 Release:	2
@@ -37,26 +37,26 @@ library:
   which have Python installed. A C interface could be problematic to
   port to non-Unix systems, such as MS Windows or OpenVMS.
 
-%description -l pl
-Python X Library (biblioteka X dla Pythona) ma byæ w pe³ni
-funkcjonaln± bibliotek± klienck± X dla programów w Pythonie. Jest
-napisana ca³kowicie w Pythonie, w przeciwieñstwie do poprzednich
+%description -l pl.UTF-8
+Python X Library (biblioteka X dla Pythona) ma byÄ‡ w peÅ‚ni
+funkcjonalnÄ… bibliotekÄ… klienckÄ… X dla programÃ³w w Pythonie. Jest
+napisana caÅ‚kowicie w Pythonie, w przeciwieÅ„stwie do poprzednich
 bibliotek X dla Pythona (starego rozszerzenia X i nowszej plxlib),
-które by³y interfejsami do Xlib w C.
+ktÃ³re byÅ‚y interfejsami do Xlib w C.
 
-Jest to mo¿liwe do zrobienia poniewa¿ programy klienckie X komunikuj±
-siê z X serwerem za pomoc± protoko³u X. Komunikacja odbywa siê poprzez
+Jest to moÅ¼liwe do zrobienia poniewaÅ¼ programy klienckie X komunikujÄ…
+siÄ™ z X serwerem za pomocÄ… protokoÅ‚u X. Komunikacja odbywa siÄ™ poprzez
 TCP/IP, gniazda uniksowe, DECnet lub dowolny inny strumieniowy
-protokó³ sieciowy. Biblioteka Xlib w C jest jedynie interfejsem do
-tego protoko³u, dostarczaj±c funkcje odpowiednie dla ¶rodowiska C.
+protokÃ³Å‚ sieciowy. Biblioteka Xlib w C jest jedynie interfejsem do
+tego protokoÅ‚u, dostarczajÄ…c funkcje odpowiednie dla Å›rodowiska C.
 
-S± trzy zalety wyboru implementacji jako czysto pythonowej biblioteki:
-- integracja: biblioteka mo¿e u¿ywaæ cudownego systemu obiektowego
-  Pythona, dostarczaj±c ³atw± w u¿yciu hierarchiê klas
-- przeno¶no¶æ: biblioteka bêdzie u¿yteczna na (prawie) ka¿dym
-  komputerze z zainstalowanym Pythonem. Interfejs w C móg³by byæ
+SÄ… trzy zalety wyboru implementacji jako czysto pythonowej biblioteki:
+- integracja: biblioteka moÅ¼e uÅ¼ywaÄ‡ cudownego systemu obiektowego
+  Pythona, dostarczajÄ…c Å‚atwÄ… w uÅ¼yciu hierarchiÄ™ klas
+- przenoÅ›noÅ›Ä‡: biblioteka bÄ™dzie uÅ¼yteczna na (prawie) kaÅ¼dym
+  komputerze z zainstalowanym Pythonem. Interfejs w C mÃ³gÅ‚by byÄ‡
   problematyczny do sportowania na systemy nieuniksowe, jak na
-  przyk³ad MS Windows czy OpenVMS.
+  przykÅ‚ad MS Windows czy OpenVMS.
 
 %prep
 %setup -q -n python-xlib-%{version}
