@@ -2,7 +2,7 @@
 %define		module	Xlib
 
 Summary:	X client library for Python
-Summary(pl.UTF-8):   Biblioteka klienta X dla Pythona
+Summary(pl.UTF-8):	Biblioteka klienta X dla Pythona
 Name:		python-%{module}
 Version:	0.12a
 Release:	2
