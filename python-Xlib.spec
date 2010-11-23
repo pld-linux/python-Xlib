@@ -4,15 +4,16 @@
 Summary:	X client library for Python
 Summary(pl.UTF-8):	Biblioteka klienta X dla Pythona
 Name:		python-%{module}
-Version:	0.13
-Release:	3
+Version:	0.14
+Release:	1
 License:	GPL
 Group:		Development/Languages/Python
-Source0:	http://dl.sourceforge.net/python-xlib/python-xlib-%{version}.tar.gz
-# Source0-md5:	8ff22c7517699c2623feb4e31ed612d2
+Source0:	http://downloads.sourceforge.net/python-xlib/python-xlib-%{version}.tar.gz
+# Source0-md5:	a038c2f410d8445f3fa8f6dcd45659c5
 URL:		http://python-xlib.sourceforge.net/
 BuildRequires:	python
 BuildRequires:	python-devel >= 1:2.3
+BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -55,21 +56,21 @@ Są trzy zalety wyboru implementacji jako czysto pythonowej biblioteki:
   Pythona, dostarczając łatwą w użyciu hierarchię klas
 - przenośność: biblioteka będzie użyteczna na (prawie) każdym
   komputerze z zainstalowanym Pythonem. Interfejs w C mógłby być
-  problematyczny do sportowania na systemy nieuniksowe, jak na
-  przykład MS Windows czy OpenVMS.
+  problematyczny do sportowania na systemy nieuniksowe, jak na przykład
+  MS Windows czy OpenVMS.
 
 %prep
 %setup -q -n python-xlib-%{version}
 
 %build
-python setup.py build
+%{__python} setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{py_sitedir}
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 install examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-python setup.py install \
+%{__python} setup.py install \
 	--root=$RPM_BUILD_ROOT --optimize=2
 
 find $RPM_BUILD_ROOT%{py_sitescriptdir}/%{module}/ -name \*.py | xargs rm
@@ -82,3 +83,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc NEWS README TODO
 %{py_sitescriptdir}/%{module}
 %{_examplesdir}/%{name}-%{version}
+%if "%{py_ver}" > "2.4"
+%{py_sitescriptdir}/python_xlib-0.12-py*.egg-info
+%endif
