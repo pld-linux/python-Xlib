@@ -1,15 +1,14 @@
-
 %define		module	Xlib
-
+%define		_rc	rc1
 Summary:	X client library for Python
 Summary(pl.UTF-8):	Biblioteka klienta X dla Pythona
 Name:		python-%{module}
-Version:	0.14
-Release:	1
+Version:	0.15
+Release:	0.%{_rc}.1
 License:	GPL
 Group:		Development/Languages/Python
-Source0:	http://downloads.sourceforge.net/python-xlib/python-xlib-%{version}.tar.gz
-# Source0-md5:	a038c2f410d8445f3fa8f6dcd45659c5
+Source0:	http://downloads.sourceforge.net/python-xlib/python-xlib-%{version}%{_rc}.tar.gz
+# Source0-md5:	7941e91bc3e92dc921dfc930cc8f7830
 URL:		http://python-xlib.sourceforge.net/
 BuildRequires:	python
 BuildRequires:	python-devel >= 1:2.3
@@ -60,7 +59,7 @@ Są trzy zalety wyboru implementacji jako czysto pythonowej biblioteki:
   MS Windows czy OpenVMS.
 
 %prep
-%setup -q -n python-xlib-%{version}
+%setup -q -n python-xlib-%{version}%{_rc}
 
 %build
 %{__python} setup.py build
@@ -84,5 +83,5 @@ rm -rf $RPM_BUILD_ROOT
 %{py_sitescriptdir}/%{module}
 %{_examplesdir}/%{name}-%{version}
 %if "%{py_ver}" > "2.4"
-%{py_sitescriptdir}/python_xlib-0.12-py*.egg-info
+%{py_sitescriptdir}/python_xlib-%{version}%{_rc}-py*.egg-info
 %endif
