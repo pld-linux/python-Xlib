@@ -81,7 +81,18 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc NEWS README TODO
-%{py_sitescriptdir}/%{module}
+%dir %{py_sitescriptdir}/%{module}
+%{py_sitescriptdir}/%{module}/*.py[co]
+%dir %{py_sitescriptdir}/%{module}/ext
+%{py_sitescriptdir}/%{module}/ext/*.py[co]
+%dir %{py_sitescriptdir}/%{module}/keysymdef
+%{py_sitescriptdir}/%{module}/keysymdef/*.py[co]
+%dir %{py_sitescriptdir}/%{module}/protocol
+%{py_sitescriptdir}/%{module}/protocol/*.py[co]
+%dir %{py_sitescriptdir}/%{module}/support
+%{py_sitescriptdir}/%{module}/support/*.py[co]
+%dir %{py_sitescriptdir}/%{module}/xobject
+%{py_sitescriptdir}/%{module}/xobject/*.py[co]
 %{_examplesdir}/%{name}-%{version}
 %if "%{py_ver}" > "2.4"
 %{py_sitescriptdir}/python_xlib-0.12-py*.egg-info
