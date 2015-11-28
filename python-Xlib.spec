@@ -63,15 +63,14 @@ Są trzy zalety wyboru implementacji jako czysto pythonowej biblioteki:
 %setup -q -n python-xlib-%{version}
 
 %build
-%{__python} setup.py build
+%py_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{py_sitedir}
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 install examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-%{__python} setup.py install \
-	--root=$RPM_BUILD_ROOT --optimize=2
+%py_install
 
 find $RPM_BUILD_ROOT%{py_sitescriptdir}/%{module}/ -name \*.py | xargs rm
 
