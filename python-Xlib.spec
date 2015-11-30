@@ -5,7 +5,7 @@ Summary:	X client library for Python
 Summary(pl.UTF-8):	Biblioteka klienta X dla Pythona
 Name:		python-%{module}
 Version:	0.14
-Release:	2
+Release:	3
 License:	GPL
 Group:		Development/Languages/Python
 Source0:	http://downloads.sourceforge.net/python-xlib/python-xlib-%{version}.tar.gz
