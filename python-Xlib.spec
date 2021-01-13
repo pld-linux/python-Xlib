@@ -10,13 +10,13 @@
 Summary:	X client library for Python 2
 Summary(pl.UTF-8):	Biblioteka klienta X dla Pythona 2
 Name:		python-%{module}
-Version:	0.26
+Version:	0.29
 Release:	1
 License:	LGPL v2.1+
 Group:		Development/Languages/Python
 #Source0Download: https://github.com/python-xlib/python-xlib/releases
 Source0:	https://github.com/python-xlib/python-xlib/releases/download/%{version}/python-xlib-%{version}.tar.bz2
-# Source0-md5:	678871a692c5409a6d6b5aaaf7f6e60d
+# Source0-md5:	001723b02c0dbbd2877bebebfe82d20c
 URL:		https://github.com/python-xlib/python-xlib
 %if %{with python2}
 BuildRequires:	python-devel >= 1:2.7
