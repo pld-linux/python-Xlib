@@ -92,6 +92,7 @@ Dokumentacja API modułu Pythona Xlib.
 
 %prep
 %setup -q -n python-xlib-%{version}
+%undos examples/*.py
 
 %build
 %if %{with python2}
@@ -124,8 +125,8 @@ rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 install examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-%{__sed} -i -e '1s,/usr/bin/python,%{__python},' \
-	-e '1s,/usr/bin/env python,%{__python},' $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}/*.py
+%{__sed} -i -e '1s,/usr/bin/python3\?$,%{__python},' \
+	-e '1s,/usr/bin/env python3\?$,%{__python},' $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}/*.py
 %endif
 
 %if %{with python3}
@@ -133,8 +134,8 @@ install examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}/python3-%{module}-%{version}
 install examples/* $RPM_BUILD_ROOT%{_examplesdir}/python3-%{module}-%{version}
-%{__sed} -i -e '1s,/usr/bin/python,%{__python3},' \
-	-e '1s,/usr/bin/env python,%{__python3},' $RPM_BUILD_ROOT%{_examplesdir}/python3-%{module}-%{version}/*.py
+%{__sed} -i -e '1s,/usr/bin/python3\?$,%{__python3},' \
+	-e '1s,/usr/bin/env python3\?$,%{__python3},' $RPM_BUILD_ROOT%{_examplesdir}/python3-%{module}-%{version}/*.py
 %endif
 
 %clean
