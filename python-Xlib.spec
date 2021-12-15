@@ -20,7 +20,7 @@ Source0:	https://github.com/python-xlib/python-xlib/releases/download/%{version}
 URL:		https://github.com/python-xlib/python-xlib
 %if %{with python2}
 BuildRequires:	python-devel >= 1:2.7
-BuildRequires:	python-setuptools >= 30.3.0
+BuildRequires:	python-setuptools >= 1:30.3.0
 BuildRequires:	python-setuptools_scm
 %if %{with tests}
 BuildRequires:	python-nose
@@ -30,7 +30,7 @@ BuildRequires:	xorg-xserver-Xvfb
 %endif
 %if %{with python3}
 BuildRequires:	python3-devel >= 1:3.3
-BuildRequires:	python3-setuptools >= 30.3.0
+BuildRequires:	python3-setuptools >= 1:30.3.0
 BuildRequires:	python3-setuptools_scm
 %if %{with tests}
 BuildRequires:	python3-nose
